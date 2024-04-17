@@ -3,7 +3,11 @@
 
 **Skriv din rapport här!**
 
-_Du kan ta bort all text som finns sedan tidigare_.
+- Skapade en ny activity och döpte den till SecondActivity
+- Skapade en knapp i MainActivity
+- Skapade en knapp och kopplade ihop den för att kunna skapa en clickListener
+- Lade till en intent som körs när knappen klickas för att öppna SecondActivity
+- 
 
 ## Följande grundsyn gäller dugga-svar:
 
