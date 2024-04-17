@@ -7,7 +7,9 @@
 - Skapade en knapp i MainActivity
 - Skapade en knapp och kopplade ihop den för att kunna skapa en clickListener
 - Lade till en intent som körs när knappen klickas för att öppna SecondActivity
-- 
+- Lade till data i putExtra metod för att skicka med till den andra aktiviteten
+- Lade till TextView i SecondActivity
+- Hittade TextView, hämtade strängen som skickades och satte dess text i den hämtade TextViewen i SecondActivity.java
 
 ## Följande grundsyn gäller dugga-svar:
 
