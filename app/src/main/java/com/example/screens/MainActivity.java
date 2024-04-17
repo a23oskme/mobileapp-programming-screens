@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
 
                     // lägg till data i intent
-                    intent.putExtra("key", "Hej!");
+                    intent.putExtra("message", "Hej!");
 
                     // starta SecondActivity
                     startActivity(intent);
