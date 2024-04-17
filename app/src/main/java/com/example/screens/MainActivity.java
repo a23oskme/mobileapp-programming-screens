@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,11 +18,17 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(R.id.main_activity_button);
 
         button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // skapa en intent för att öppna SecondActivity
+                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
 
-            @Override
-            public void onClick(View view) {
+                    // lägg till data i intent
+                    intent.putExtra("key", "Hej!");
 
-            }
-        });
+                    // starta SecondActivity
+                    startActivity(intent);
+                }
+            });
     }
 }
