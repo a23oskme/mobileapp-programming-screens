@@ -1,48 +1,49 @@
 
-# Rapport
-
-**Skriv din rapport här!**
+# Rapport Oskar Steise
 
 - Skapade en ny activity och döpte den till SecondActivity
+
 - Skapade en knapp i MainActivity
-- Skapade en knapp och kopplade ihop den för att kunna skapa en clickListener
+- Jag lokaliserade sedan ihop dess ID och skapade en clickListener
 - Lade till en intent som körs när knappen klickas för att öppna SecondActivity
-- Lade till data i putExtra metod för att skicka med till den andra aktiviteten
-- Lade till TextView i SecondActivity
-- Hittade TextView, hämtade strängen som skickades och satte dess text i den hämtade TextViewen i SecondActivity.java
-
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
+- Lade till data i en putExtra metod för att skicka med till den andra aktiviteten, vilket innebär att en text-sträng med ordet "Hej" skickas till SecondActivity när den öppnas
 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+// hitta knappen
+Button button = findViewById(R.id.main_activity_button);
+
+button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            // skapa en intent för att öppna SecondActivity
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+
+            // lägg till data i intent
+            intent.putExtra("message", "Hej!");
+
+            // starta SecondActivity
+            startActivity(intent);
+        }
+    });
 ```
 
-Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
 
-Läs gärna:
+- Lade till en TextView i SecondActivity
+- Hittade TextView ID:et, och hämtade strängen som skickades och satte dess text i den hämtade TextViewen i SecondActivity.java
+```
+        // hitta textview
+        TextView textView = findViewById(R.id.second_activity_textview);
 
-- Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
-- Wunsche, B.C. (2013) A smartphone-based golf simulation exercise game for supporting arthritis patients. 2013 28th International Conference of Image and Vision Computing New Zealand (IVCNZ), IEEE, pp. 459–464.
-- Wohlin, C., Runeson, P., Höst, M., Ohlsson, M.C., Regnell, B., Wesslén, A. (2012) Experimentation in Software Engineering, Berlin, Heidelberg: Springer Berlin Heidelberg.
+        // hämta den skickade strängen
+        String message = getIntent().getStringExtra("message");
+
+        // sätt texten i textview
+        textView.setText(message);
+```
+
+På bilderna nedanför ser man först den första activityn som visas när appen laddas och den andra är den man kommer till när man klickar på den enkla knappen med texten 'Button' på. 
+
+![Bild på första activityn](screenshot1.png)
+![Bild på andra activityn](screenshot2.png)
+
