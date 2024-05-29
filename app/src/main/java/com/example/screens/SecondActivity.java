@@ -17,12 +17,12 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         // hitta textview
-        TextView textView = findViewById(R.id.second_activity_textview);
+        //TextView textView = findViewById(R.id.second_activity_textview);
 
         // hämta den skickade strängen
         String message = getIntent().getStringExtra("message");
 
         // sätt texten i textview
-        textView.setText(message);
+        //textView.setText(message);
     }
 }

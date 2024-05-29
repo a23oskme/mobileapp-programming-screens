@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // hitta knappen
-        Button button = findViewById(R.id.main_activity_button);
+        Button button = findViewById(R.id.schedule_btn);
 
         button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -24,11 +24,12 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
 
                     // lägg till data i intent
-                    intent.putExtra("message", "Hej!");
+                    //intent.putExtra("message", "Hej!");
 
                     // starta SecondActivity
                     startActivity(intent);
                 }
             });
+
     }
 }
